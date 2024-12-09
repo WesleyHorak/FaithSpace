@@ -14,7 +14,11 @@ async function Page({ params }: { params: { id: string } }) {
   const user = await currentUser();
   if (!user) return null;
 
-  const userInfo = await fetchUser(params.id);
+  // Ensure params.id is a string and not undefined
+  const userId = params.id?.toString();
+  if (!userId) return null;
+
+  const userInfo = await fetchUser(userId);
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   return (

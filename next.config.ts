@@ -5,9 +5,10 @@ const nextConfig = {
   },
   
   experimental: {
-    serverActions: {}, // Keep this if you want to use server actions
-    // Remove the deprecated key
-    serverExternalPackages: ["mongoose"], // Use the new key
+    serverActions: {
+      // You can add specific server actions configuration here if needed
+      allowedOrigins: ['localhost:3000'], // Example: specify allowed origins
+    },
   },
   
   eslint: {
