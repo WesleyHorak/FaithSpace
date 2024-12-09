@@ -5,14 +5,17 @@ const nextConfig = {
   },
   
   experimental: {
-    serverActions: true,
-    serverComponentsExternalPackages: ["mongoose"],
+    serverActions: {}, // Keep this if you want to use server actions
+    // Remove the unrecognized key
+    // serverExternalPackages: ["mongoose"], // This line should be removed
   },
+  
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  
   images: {
     remotePatterns: [
       {
