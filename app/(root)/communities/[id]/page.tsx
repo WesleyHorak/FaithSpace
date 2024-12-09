@@ -10,8 +10,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { fetchCommunityDetails } from "@/lib/actions/community.actions";
 
+// Define the type for the params
+interface PageParams {
+  id: string;
+}
 
-async function Page({ params }: { params: { id: string } }) {
+async function Page({ params }: { params: PageParams }) {
   const user = await currentUser();
   if (!user) return null;
 

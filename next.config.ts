@@ -6,13 +6,11 @@ const nextConfig = {
   
   experimental: {
     serverActions: {}, // Keep this if you want to use server actions
-    // Remove the unrecognized key
-    // serverExternalPackages: ["mongoose"], // This line should be removed
+    // Remove the deprecated key
+    serverExternalPackages: ["mongoose"], // Use the new key
   },
   
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
   
